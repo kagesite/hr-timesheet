@@ -16,8 +16,9 @@ export class TimesheetComponent implements OnInit {
     department: Department | undefined
     employeeNameFC = new FormControl('', this.nameValidator());
     employees: Employee[] = [];
-    employeeId = 0
-    
+    employeeId = 0;
+    weekdays: string[] = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
     constructor(
         private router: ActivatedRoute,
         private departmentsService: DepartmentsService,
@@ -37,6 +38,13 @@ export class TimesheetComponent implements OnInit {
                 departmentId: this.department?.id,
                 name: this.employeeNameFC.value,
                 payRate: Math.floor(Math.random() * 50) + 50,
+                monday: 0,
+                tuesday: 0,
+                wednesday: 0,
+                thursday: 0,
+                friday: 0,
+                saturday: 0,
+                sunday: 0,
             });
 
             this.employeeNameFC.setValue('');
@@ -49,12 +57,12 @@ export class TimesheetComponent implements OnInit {
             if (this.employees && this.employees.length) {
                 this.employees.forEach(employee => {
                     if (employee.name.toLowerCase() === control.value.toLowerCase()) {
-                        error = {duplicate: true};
+                        error = { duplicate: true };
                     }
                 });
             }
             return error;
         };
     }
-    
+
 }
