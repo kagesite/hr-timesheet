@@ -4,4 +4,12 @@ h2 {
 
 .cards {
     margin: auto;
+    width: 100%;
+}
+
+mat-card {
+    width: 70%;
+    max-width: 700px;
+    margin: auto;
+    display: flex;
 }
