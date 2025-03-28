@@ -10,23 +10,26 @@ import { TopNavbarComponent } from './components/top-navbar/top-navbar.component
 import { AnalyticsTableComponent } from './components/analytics-table/analytics-table.component';
 import { MaterialModule } from './modules/material.module';
 import { FormsModule } from '@angular/forms';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    DepartmentsComponent,
-    TimesheetComponent,
-    AnalyticsComponent,
-    TopNavbarComponent,
-    AnalyticsTableComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    MaterialModule,
-    FormsModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        DepartmentsComponent,
+        TimesheetComponent,
+        AnalyticsComponent,
+        TopNavbarComponent,
+        AnalyticsTableComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        MaterialModule,
+        FormsModule,
+    ],
+    providers: [
+        provideHttpClient(),
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
