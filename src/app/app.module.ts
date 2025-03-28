@@ -8,6 +8,7 @@ import { TimesheetComponent } from './components/timesheet/timesheet.component';
 import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { AnalyticsTableComponent } from './components/analytics-table/analytics-table.component';
+import { MaterialModule } from './modules/material.module';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import { AnalyticsTableComponent } from './components/analytics-table/analytics-
     TimesheetComponent,
     AnalyticsComponent,
     TopNavbarComponent,
-    AnalyticsTableComponent
+    AnalyticsTableComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
